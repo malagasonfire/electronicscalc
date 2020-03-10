@@ -1,0 +1,41 @@
+'ProgramMode:RUN
+Menu "ResDivider","R1/R2?",0,"Vout?",1,"QUIT",4
+Lbl 0
+"VIN"?->A
+If A=0
+Then "BAD INPUT":Goto 4
+IfEnd
+"VOUT"?->V
+If V=0
+Then "BAD INPUT":Goto 4
+IfEnd
+V/A->C
+If C<=0
+Then "DIV ZERO":Goto 4
+IfEnd
+CDisps
+Goto 4
+Lbl 1
+"VIN"?->A
+If A=0
+Then "BAD INPUT":Goto 4
+Else Goto 2
+IfEnd
+Lbl 2
+"INPUT V IS"
+Locate 4,4,A
+"R1"?->B
+BDisps"R2"?->C
+CDisps
+If C<=0
+Then "DIV ZERO":Goto 4
+Else Goto 3
+IfEnd
+Lbl 3
+A*(C/(C+B))->V
+"VOUT(V)="
+VDisps"CURRENT(A)="
+V/(C+B)Disps"POWER(W)="
+(V*V)/(C+B)DispsLbl 4
+"END"
+Stop
