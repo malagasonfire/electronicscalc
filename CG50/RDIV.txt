@@ -1,15 +1,15 @@
 'ProgramMode:RUN
 Menu "ResDivider","R1/R2?",0,"Vout?",1,"QUIT",4
 Lbl 0
-"VIN"?->A
-If A=0
+"VIN"?->U
+If U=0
 Then "BAD INPUT":Goto 4
 IfEnd
 "VOUT"?->V
 If V=0
 Then "BAD INPUT":Goto 4
 IfEnd
-V/A->C
+V/Abs(U-V)->C
 If C<=0
 Then "DIV ZERO":Goto 4
 IfEnd
@@ -19,7 +19,6 @@ Lbl 1
 "VIN"?->A
 If A=0
 Then "BAD INPUT":Goto 4
-Else Goto 2
 IfEnd
 Lbl 2
 "INPUT V IS"
@@ -29,7 +28,6 @@ BDisps"R2"?->C
 CDisps
 If C<=0
 Then "DIV ZERO":Goto 4
-Else Goto 3
 IfEnd
 Lbl 3
 A*(C/(C+B))->V
