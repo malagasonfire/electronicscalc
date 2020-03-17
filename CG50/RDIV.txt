@@ -9,7 +9,7 @@ IfEnd
 If V=0
 Then "BAD INPUT":Goto 4
 IfEnd
-V/Abs(U-V)->C
+V/(Abs (U-V))->C
 If C<=0
 Then "DIV ZERO":Goto 4
 IfEnd
