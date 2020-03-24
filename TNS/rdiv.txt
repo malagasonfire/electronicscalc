@@ -1,15 +1,15 @@
 Define rdiv()=
 Prgm
-:Disp "Resistive Divider"
-:Request "Vin?",vin
-:Request "R1?",r1
-:Request "R2?",r2
-:If r2=0 Then
-: Disp "Error Div Zero"
-: Goto end
-:EndIf
-:vout:=approx(((r2)/(r1+r2))*vin)
-:Disp "Vout="&string(vout)
-:Lbl end:
-:Disp "End"
-:EndPrgm
+Disp "Resistive Divider"
+Request "Vin?",vin
+Request "R1?",r1
+Request "R2?",r2
+If r2=0 Then
+ Disp "Error Div Zero"
+ Goto end
+EndIf
+vout:=approx(((r2)/(r1+r2))*vin)
+Disp "Vout="&string(vout)
+Lbl end:
+Disp "End"
+EndPrgm
