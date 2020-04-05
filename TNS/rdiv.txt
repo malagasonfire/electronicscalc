@@ -1,15 +1,39 @@
 Define rdiv()=
 Prgm
-Disp "Resistive Divider"
-Request "Vin?",vin
-Request "R1?",r1
-Request "R2?",r2
-If r2=0 Then
- Disp "Error Div Zero"
+ Disp "Resistive Divider"
+ Disp "RDIV"
+ Disp "1-Vout?"
+ Disp "2-R2/R1"
+ Request "Option",optn
+ If optn=1 Then
+ Goto lvout
+ ElseIf optn=2 Then
+   Goto lr1r2
+ Else
+   Goto end
+ EndIf
+ Lbl lvout:
+ Request "Vin?",vin
+ Request "R1?",r1
+ Request "R2?",r2
+ If r2≤0 Then
+  Disp "Error Div Zero"
+  Goto end
+ EndIf
+ vout:=approx(((r2)/(r1+r2))*vin)
+ Disp "Vout="&string(vout)
  Goto end
-EndIf
-vout:=approx(((r2)/(r1+r2))*vin)
-Disp "Vout="&string(vout)
-Lbl end:
-Disp "End"
+ Lbl lr1r2:
+ Request "Vin?",vin
+ Request "Vout?",vout
+ If vout≤0 Then
+   Disp "Input Error"
+   Goto end
+ Else
+   res:=((vout)/(abs(vout-vin)))
+ Disp "Res="
+ Disp res▶approxFraction(5.−14)
+ EndIf
+ Lbl end:
+ Disp "End"
 EndPrgm
