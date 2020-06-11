@@ -64,10 +64,10 @@ ClrText
 "5 - Green  10e5"
 "Enter->More"Disps
 ClrText
-"6 - Blue   10e5"
-"7 - Violet 10e6"
-"8 - Grey   10e7"
-"9 - While  10e7"
+"6 - Blue   10e6"
+"7 - Violet 10e7"
+"8 - Grey   10e8"
+"9 - While  10e9"
 "Enter->More"Disps
 ClrText
 "Tolerances:+/-"
