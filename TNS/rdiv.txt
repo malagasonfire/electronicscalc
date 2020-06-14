@@ -45,16 +45,19 @@ Prgm
  Disp "Resistor Color"
  Disp "Codes"
  Disp "===WIP==="
+ getKey(1)
  Disp "0 - Black   10e0"
  Disp "1 - Brown  10e1"
  Disp "2 - Red      10e2"
  Disp "3 - Orange 10e3"
  Disp "4 - Yellow 10e4"
  Disp "5 - Green  10e5"
+ getKey(1)
  Disp "6 - Blue   10e6"
  Disp "7 - Violet 10e7"
  Disp "8 - Grey   10e8"
  Disp "9 - While  10e9"
+ getKey(1)
  Lbl end:
  Disp "End"
 EndPrgm
