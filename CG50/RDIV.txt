@@ -54,6 +54,10 @@ Goto 9
 Lbl 4
 "----[Color Codes]----"Disps
 ClrText
+"/ -  Gold  10e-1"
+"/ - Silver 10e-1"
+"Enter->More"Disps
+ClrText
 "0 - Black  10e0"
 "1 - Brown  10e1"
 "2 - Red    10e2"
@@ -78,8 +82,13 @@ ClrText
 "Green :    .5% "
 "Gold :      5% "
 "Silver :   10% "
-"Enter->Final"Disps
+"Enter->More"Disps
 ClrText
+"OA: Resistor"
+"  .--.......--."
+"-(   |||| ||   )-"
+"  '--'''''''--'"
+"Enter->Final"Disps
 Lbl 9
 "END"
 Stop
